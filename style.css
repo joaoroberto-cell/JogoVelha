@@ -1,0 +1,588 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --fundo: #0B0B16;
+    --painel: #151528;
+    --painel2: #1D1D35;
+    --roxo: #8757FF;
+    --azul: #36D9FF;
+    --rosa: #FF65B3;
+    --verde: #43E6A0;
+    --vermelho: #FF5368;
+    --texto: #F5F4FF;
+    --cinza: #9292B2;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 20% 20%, #25204A 0%, transparent 35%),
+        radial-gradient(circle at 80% 80%, #102B40 0%, transparent 35%),
+        var(--fundo);
+
+    color: var(--texto);
+    font-family: 'Rajdhani', sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 15px;
+}
+
+/* CONTAINER PRINCIPAL */
+
+.container {
+    width: 100%;
+    max-width: 850px;
+    text-align: center;
+}
+
+/* TÍTULOS */
+
+.tela h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 35px;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+
+    background: linear-gradient(
+        90deg,
+        var(--azul),
+        var(--roxo),
+        var(--rosa)
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.tela p {
+    color: var(--cinza);
+    font-size: 19px;
+    margin-bottom: 25px;
+}
+
+.escondido {
+    display: none !important;
+}
+
+/* BOTÕES */
+
+button {
+    border: 1px solid var(--roxo);
+    cursor: pointer;
+
+    padding: 14px 25px;
+    border-radius: 10px;
+
+    background: linear-gradient(
+        135deg,
+        #7650E8,
+        #4930A5
+    );
+
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: 0.3s;
+    box-shadow: 0 0 15px #8757FF35;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 22px #8757FF90;
+    filter: brightness(1.2);
+}
+
+/* TELA INICIAL */
+
+#telaInicial {
+    padding: 50px 20px;
+    background: #151528CC;
+    border: 1px solid #8757FF55;
+    border-radius: 20px;
+    box-shadow: 0 0 40px #8757FF20;
+}
+
+#telaInicial h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+#telaInicial button {
+    margin-top: 15px;
+}
+
+/* ESCOLHA DE MODO */
+
+.opcoes {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.opcoes button {
+    width: 200px;
+    min-height: 55px;
+}
+
+/* ESCOLHA DE SÍMBOLO */
+
+.escolhas {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.escolher {
+    width: 100px;
+    height: 100px;
+    font-size: 35px;
+}
+
+/* TELA DO JOGO */
+
+#telaJogo {
+    width: 100%;
+    padding: 30px;
+    background: #151528E8;
+    border: 1px solid #8757FF65;
+    border-radius: 20px;
+
+    box-shadow:
+        0 0 30px #8757FF20,
+        inset 0 0 30px #8757FF08;
+}
+
+#telaJogo h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 30px;
+    letter-spacing: 4px;
+    margin-bottom: 8px;
+}
+
+/* INFORMAÇÃO DE TURNO */
+
+.informacoes {
+    margin: 20px auto;
+    padding: 13px;
+
+    max-width: 400px;
+
+    background: linear-gradient(
+        90deg,
+        #30205B,
+        #172D49
+    );
+
+    border: 1px solid #8757FF80;
+    border-radius: 10px;
+
+    box-shadow: 0 0 18px #8757FF25;
+}
+
+#turno {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 15px;
+    color: var(--azul);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* ÁREA DO JOGO E PLACAR */
+
+.placar {
+    position: absolute;
+    width: 140px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#telaJogo {
+    position: relative;
+}
+
+/* ESTATÍSTICAS */
+
+.estatistica {
+    background: linear-gradient(
+        145deg,
+        #22223E,
+        #17172B
+    );
+
+    border: 1px solid #8757FF55;
+    border-radius: 12px;
+
+    padding: 15px 8px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    box-shadow: 0 0 15px #8757FF15;
+}
+
+.estatistica span {
+    color: var(--cinza);
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.estatistica strong {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 25px;
+}
+
+#vitorias {
+    color: var(--verde);
+    text-shadow: 0 0 12px #43E6A055;
+}
+
+#empates {
+    color: #B7B7CE;
+}
+
+#derrotas {
+    color: var(--vermelho);
+    text-shadow: 0 0 12px #FF536855;
+}
+
+/* TABULEIRO */
+
+.tabuleiro {
+    position: relative;
+
+    width: 300px;
+    height: 300px;
+
+    margin: 25px auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    background: #10101F;
+    border: 2px solid var(--roxo);
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 0 20px #8757FF40,
+        inset 0 0 25px #8757FF15;
+}
+
+.casa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-right: 2px solid #8757FF80;
+    border-bottom: 2px solid #8757FF80;
+
+    font-family: 'Orbitron', sans-serif;
+    font-size: 65px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.2s;
+
+    background: #17172A;
+}
+
+.casa:nth-child(3n) {
+    border-right: none;
+}
+
+.casa:nth-child(n+7) {
+    border-bottom: none;
+}
+
+.casa:hover {
+    background: #29234B;
+    box-shadow: inset 0 0 20px #8757FF40;
+}
+
+.casa.x {
+    color: var(--rosa);
+    text-shadow: 0 0 20px #FF65B380;
+}
+
+.casa.o {
+    color: var(--azul);
+    text-shadow: 0 0 20px #36D9FF80;
+}
+
+/* LINHA DA VITÓRIA */
+
+#linhaVitoria {
+    position: absolute;
+
+    height: 5px;
+    width: 0;
+
+    background: white;
+    border-radius: 10px;
+
+    top: 0;
+    left: 0;
+
+    transform-origin: left center;
+
+    z-index: 5;
+
+    box-shadow: 0 0 12px white;
+
+    transition: width 0.5s ease;
+
+    pointer-events: none;
+}
+
+/* BOTÃO VOLTAR */
+
+#btnVoltar {
+    margin-top: 10px;
+    background: #25253D;
+    border-color: #555575;
+}
+
+/* MODAL */
+
+.modal {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #050510A8;
+    backdrop-filter: blur(10px);
+
+    z-index: 10;
+}
+
+.modal-conteudo {
+    width: 90%;
+    max-width: 370px;
+
+    padding: 40px 25px;
+
+    border-radius: 18px;
+    text-align: center;
+
+    animation: aparecer 0.4s ease;
+
+    border: 1px solid transparent;
+    box-shadow: 0 0 40px #00000070;
+}
+
+.modal-conteudo h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.modal-conteudo p {
+    font-size: 18px;
+    margin-bottom: 25px;
+    color: white;
+}
+
+.modal-conteudo button {
+    background: white;
+    color: #151525;
+    border: none;
+}
+
+/* RESULTADOS */
+
+.vitoria {
+    background: #12472F;
+    border-color: var(--verde);
+    box-shadow: 0 0 30px #43E6A055;
+}
+
+.derrota {
+    background: #591C2B;
+    border-color: var(--vermelho);
+    box-shadow: 0 0 30px #FF536855;
+}
+
+.empate {
+    background: #343445;
+    border-color: #A5A5B5;
+    box-shadow: 0 0 30px #AAAAAA30;
+}
+
+/* ANIMAÇÕES */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: scale(0.75);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* RESPONSIVIDADE */
+
+@media (min-width: 769px) {
+
+    #telaJogo {
+        padding-left: 175px;
+        padding-right: 175px;
+        min-height: 600px;
+    }
+
+    .placar {
+        top: 50%;
+        left: 18px;
+        transform: translateY(-50%);
+    }
+
+    .tabuleiro {
+        width: 300px;
+        height: 300px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 20px 12px;
+    }
+
+    .container {
+        max-width: 500px;
+    }
+
+    #telaJogo {
+        padding: 22px 12px;
+    }
+
+    #telaJogo h1 {
+        font-size: 25px;
+    }
+
+    .placar {
+        position: static;
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 8px;
+        margin: 20px auto;
+    }
+
+    .estatistica {
+        padding: 12px 5px;
+    }
+
+    .estatistica strong {
+        font-size: 22px;
+    }
+
+    .tabuleiro {
+        width: min(80vw, 320px);
+        height: min(80vw, 320px);
+        margin: 20px auto;
+    }
+
+    .casa {
+        font-size: clamp(40px, 13vw, 65px);
+    }
+
+    .informacoes {
+        margin: 15px auto;
+    }
+
+    #turno {
+        font-size: 13px;
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    .tela h1 {
+        font-size: 27px;
+    }
+
+    #telaInicial h1 {
+        font-size: 32px;
+    }
+
+    .opcoes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .opcoes button {
+        width: 100%;
+        max-width: 230px;
+    }
+
+    .tabuleiro {
+        width: min(78vw, 280px);
+        height: min(78vw, 280px);
+    }
+
+    .estatistica span {
+        font-size: 10px;
+    }
+
+    .estatistica strong {
+        font-size: 19px;
+    }
+
+    .informacoes {
+        padding: 11px 5px;
+    }
+
+    .modal-conteudo {
+        padding: 30px 18px;
+    }
+
+}
+
+/* TELAS COM POUCA ALTURA */
+
+@media (max-height: 550px) {
+
+    body {
+        align-items: flex-start;
+    }
+
+    #telaJogo {
+        min-height: auto;
+    }
+
+    .tabuleiro {
+        width: 240px;
+        height: 240px;
+        margin: 12px auto;
+    }
+
+}

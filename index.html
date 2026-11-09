@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+
+        <!-- Tela inicial -->
+        <section id="telaInicial" class="tela">
+            <h1>Jogo da Velha</h1>
+            <p>Escolha seu modo de jogo!</p>
+
+            <button id="btnIniciar">Iniciar jogo</button>
+        </section>
+
+        <!-- Escolher modo -->
+        <section id="telaModo" class="tela escondido">
+            <h1>Modo de jogo</h1>
+            <p>Como deseja jogar?</p>
+
+            <div class="opcoes">
+                <button id="btnIA">Contra IA</button>
+                <button id="btnDoisJogadores">2 Jogadores</button>
+            </div>
+        </section>
+
+        <!-- Escolher símbolo -->
+        <section id="telaEscolha" class="tela escondido">
+            <h1>Escolha seu símbolo</h1>
+            <p>Com qual símbolo você deseja jogar?</p>
+
+            <div class="escolhas">
+                <button class="escolher" data-simbolo="X">X</button>
+                <button class="escolher" data-simbolo="O">O</button>
+            </div>
+        </section>
+
+        <!-- Tela do jogo -->
+        <section id="telaJogo" class="tela escondido">
+
+            <h1>Jogo da Velha</h1>
+
+            <!-- Placar -->
+            <div class="placar">
+
+                <div class="estatistica">
+                    <span id="labelVitorias">Vitórias</span>
+                    <strong id="vitorias">0</strong>
+                </div>
+
+                <div class="estatistica">
+                    <span>Empates</span>
+                    <strong id="empates">0</strong>
+                </div>
+
+                <div class="estatistica">
+                    <span id="labelDerrotas">Derrotas</span>
+                    <strong id="derrotas">0</strong>
+                </div>
+
+            </div>
+
+            <div class="informacoes">
+                <p id="turno">Sua vez!</p>
+            </div>
+
+            <!-- Tabuleiro -->
+            <div class="tabuleiro" id="tabuleiro">
+
+                <div class="casa" data-index="0"></div>
+                <div class="casa" data-index="1"></div>
+                <div class="casa" data-index="2"></div>
+
+                <div class="casa" data-index="3"></div>
+                <div class="casa" data-index="4"></div>
+                <div class="casa" data-index="5"></div>
+
+                <div class="casa" data-index="6"></div>
+                <div class="casa" data-index="7"></div>
+                <div class="casa" data-index="8"></div>
+
+                <div id="linhaVitoria"></div>
+
+            </div>
+
+            <button id="btnVoltar">Voltar ao início</button>
+
+        </section>
+
+    </main>
+
+    <!-- Modal de resultado -->
+    <div id="modal" class="modal escondido">
+
+        <div class="modal-conteudo" id="modalConteudo">
+
+            <h2 id="resultado">Você venceu!</h2>
+            <p id="mensagemResultado"></p>
+
+            <button id="btnNovamente">Jogar novamente</button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
